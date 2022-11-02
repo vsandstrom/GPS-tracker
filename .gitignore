@@ -1,1 +1,3 @@
-path.txt
+path.*
+*.js
+dist/
