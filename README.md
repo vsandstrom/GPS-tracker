@@ -1,5 +1,5 @@
-#GPS-tracker
-###GPS tracker logging location in a JSON file
+# GPS-tracker
+### GPS tracker logging location in a JSON file
 
 run
 ```bash
