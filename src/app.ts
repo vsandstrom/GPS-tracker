@@ -4,10 +4,10 @@ import * as fs from 'fs';
 import express, {Express, Request, Response} from "express";
 const app: Express = express();
 
-// app.use(express.json()) // for parsing application/json
-// app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+// TODO: Byt riktning på API, polla clienten från serversidan, istället för att skicka från clientsidan.
 
 app.use(express.json());
+
 
 let corsOpts = {
     origin:'*',
@@ -16,6 +16,8 @@ let corsOpts = {
 }
 
 app.use(cors(corsOpts));
+
+app.use(express.static('public'));
 
 const path = "path.json";
 

@@ -6,7 +6,7 @@ const url: string = "http://127.0.0.1:5000";
 
 const showLocation = () => {
     console.log("hello");
-    navigator.geolocation.getCurrentPosition(async (pos) => {
+    navigator.geolocation.getCurrentPosition( async (pos) => {
         let time: Date = new Date(pos.timestamp);
         console.log(time);
         container.innerHTML = 
@@ -14,12 +14,15 @@ const showLocation = () => {
         Location @: ${time}<br>
         latitude: ${pos.coords.latitude}<br>
         longitude: ${pos.coords.longitude}<br>
-        `
+        heading: ${pos.coords.heading}<br>
+        speed: ${pos.coords.speed}<br>
 
+        `
         let msg: Object = {
                 timestamp: pos.timestamp,
                 latitude: pos.coords.latitude,
                 longitude: pos.coords.longitude
+
         };
 
         let param: Object = {
@@ -39,6 +42,14 @@ const showLocation = () => {
 };
 
 let intervalID:any = 0;
+// const showContinuous2 = async (e: MouseEvent) => {
+//     let elem = e.target as HTMLButtonElement;
+//
+//
+//
+//
+// }
+
 const showContiuous = (e: MouseEvent) => {
     // start tracking position
     let el = e.target as HTMLButtonElement;
